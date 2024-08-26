@@ -1,8 +1,16 @@
 #pragma once
 #include "BaseGame.h"
+#include "Player.h"
+#include "Collectables.h"
+#include "Spike.h"
+#include<iostream>
 class Game : public BaseGame
 {
 public:
+	int iterator{};
+	Spike* spike[10];
+	Player* player;
+	Collectables* col;
 	explicit Game( const Window& window );
 	Game(const Game& other) = delete;
 	Game& operator=(const Game& other) = delete;
