@@ -23,7 +23,7 @@ void Spike::Fall()
 	}
 	if (fall_speed < 30) 
 	{
-		fall_speed += 0.2;
+		fall_speed += 0.5;
 	}
 }
 bool Spike::Hit(Point2f player, float size) 
@@ -31,8 +31,8 @@ bool Spike::Hit(Point2f player, float size)
 	std::vector<Point2f> hitbox{
 	Point2f(player.x,player.y),
 	Point2f(player.x+size,player.y),
-	Point2f(player.x + size,player.y+2),
-	Point2f(player.x,player.y + 2),
+	Point2f(player.x + size,player.y+1),
+	Point2f(player.x,player.y + 1),
 	Point2f(player.x,player.y)
 	};
 	if (utils::Raycast(hitbox, Point2f(xPos, yPos), Point2f(xPos, yPos - 10), hit_info)) 

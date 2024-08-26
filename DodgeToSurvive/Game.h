@@ -8,7 +8,7 @@ class Game : public BaseGame
 {
 public:
 	int iterator{};
-	Spike* spike[10];
+	Spike* spike[15];
 	Player* player;
 	Collectables* col;
 	explicit Game( const Window& window );

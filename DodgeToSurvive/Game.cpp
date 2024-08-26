@@ -16,7 +16,7 @@ void Game::Initialize( )
 {
 	player = new Player();
 	col = new Collectables();
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < 15; i++) {
 		spike[i] = new Spike();
 	}
 
@@ -30,7 +30,7 @@ void Game::Cleanup( )
 
 void Game::Update( float elapsedSec )
 {
-	if (iterator < 10)
+	if (iterator < 15)
 	{
 		spike[iterator]->Fall();
 		iterator++;
@@ -40,7 +40,7 @@ void Game::Update( float elapsedSec )
 		iterator = 0;
 	}
 	
-	for (int i = 0; i < 10; i++) 
+	for (int i = 0; i < 15; i++) 
 	{
 		player->IsHit(spike[i]->Hit(player->GetCoords(), player->GetSize()));
 		
@@ -77,7 +77,7 @@ void Game::Update( float elapsedSec )
 void Game::Draw( ) const
 {
 	ClearBackground();
-	for (int i = 0; i < 10; i++) 
+	for (int i = 0; i < 15; i++) 
 	{
 		spike[i]->Draw();
 	}
