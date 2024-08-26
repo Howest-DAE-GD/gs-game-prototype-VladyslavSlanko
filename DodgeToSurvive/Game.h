@@ -7,8 +7,10 @@
 class Game : public BaseGame
 {
 public:
+	int anitime{ 15 };
+	int quantity{1};
 	int iterator{};
-	Spike* spike[15];
+	Spike* spike[100];
 	Player* player;
 	Collectables* col;
 	explicit Game( const Window& window );

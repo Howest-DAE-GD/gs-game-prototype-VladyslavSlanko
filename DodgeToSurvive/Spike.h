@@ -13,11 +13,12 @@ public:
 
 private:
 
-	float xPos = (rand() % 84) * 10, yPos{ 500 }; 
+	float xPos, yPos; 
 	float fall_speed = 3;
-
+	int chance{};
+	bool fall = false;
 	utils::HitInfo hit_info;
-
+	
 
 };
 

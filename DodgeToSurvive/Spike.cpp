@@ -4,6 +4,8 @@
 
 Spike::Spike() 
 {
+	xPos = (rand() % 84) * 10;
+	yPos = 500;
 
 }
 
@@ -14,17 +16,30 @@ void Spike::Draw()
 
 void Spike::Fall() 
 {
-	yPos -= fall_speed;
+	chance = rand() % 1000 + 1;
 
-	if (yPos <= 0) 
+	if (chance > 995)
 	{
-		yPos = 550;
-		xPos = (rand() % 84) * 10;
+		fall = true;
 	}
-	if (fall_speed < 30) 
+
+	if (fall == true) 
 	{
-		fall_speed += 0.5;
+		yPos -= fall_speed;
 	}
+		
+
+		if (yPos <= 0)
+		{
+			yPos = 550;
+			xPos = (rand() % 84) * 10;
+			fall = false;
+		}
+		if (fall_speed < 10)
+		{
+			fall_speed += 0.001;
+		}
+	
 }
 bool Spike::Hit(Point2f player, float size) 
 {
