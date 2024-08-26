@@ -38,7 +38,7 @@ void Player::IsHit(bool hit)
 {
 	if (hit) 
 	{
-		size -= 5;
+		size -= 2.5;
 	}
 }
 
